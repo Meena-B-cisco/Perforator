@@ -1,0 +1,4 @@
+perforator-0.0.5.tar.gz filter=lfs diff=lfs merge=lfs -text
+perforator-0.0.5.zip filter=lfs diff=lfs merge=lfs -text
+cli filter=lfs diff=lfs merge=lfs -text
+migrate filter=lfs diff=lfs merge=lfs -text
