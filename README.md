@@ -31,7 +31,7 @@ If you're using the source code under `perforator-0.0.5`, build it using:
 To use the `perforator` CLI binary directly, set an environment variable pointing to its full path:
 
 ```bash
-export perforator_cli=/full/path/to/perforator
+export perforator_cli=/full/path/to/cli_binary
 ```
 
 Follow the tutorial here: https://perforator.tech/docs/en/tutorials/python-profiling
