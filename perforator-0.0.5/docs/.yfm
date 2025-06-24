@@ -1,0 +1,17 @@
+strict: true
+breaks: false
+langs: ['en']
+
+
+docs-viewer:
+  metrika: 99681271
+  no-index: false
+  project-name: perforator-opensource
+  is-new-external: true
+  langs: ['en']
+  show-revision: true
+  github-url-prefix: github.com/yandex/perforator/docs
+  favicon-src: https://perforator.tech/favicon.svg
+  logo-options:
+    title: Perforator
+    src: https://perforator.tech/static/logo.svg

@@ -1,0 +1,47 @@
+port: {{ .Values.storage.containerPorts.grpc }}
+metrics_port: {{ .Values.storage.containerPorts.metrics }}
+storage:
+  databases:
+    clickhouse:
+      replicas: {{ include "perforator.clickhouse.endpoints" . | nindent 8 }}
+      db: {{ .Values.databases.clickhouse.db }}
+      user: {{ .Values.databases.clickhouse.user }}
+      password_env: "CLICKHOUSE_PASSWORD"
+      insecure: {{ .Values.databases.clickhouse.insecure }}
+      ca_cert_path: {{ .Values.databases.clickhouse.ca_cert_path }}
+    postgres:
+      auth:
+        user: {{ .Values.databases.postgresql.user }}
+        password_env: "POSTGRES_PASSWORD"
+      db: {{ .Values.databases.postgresql.db }}
+      endpoints: {{ include "perforator.postgresql.endpoints" . | nindent 8 }}
+      sslmode: {{ .Values.databases.postgresql.sslmode }}
+      sslrootcert: {{ .Values.databases.postgresql.sslrootcert }}
+    s3:
+      endpoint: {{ include "perforator.s3.endpoint" . }}
+      secret_key_path: "/etc/perforator/s3/secret_key.txt"
+      access_key_path: "/etc/perforator/s3/access_key.txt"
+      insecure: {{ .Values.databases.s3.insecure }}
+      force_path_style: {{ .Values.databases.s3.force_path_style }}
+      ca_cert_path: {{ .Values.databases.s3.ca_cert_path }}
+  profiles:
+    meta:
+      batching:
+        size: 1000
+        interval: "1s"
+    bucket: {{ .Values.databases.s3.buckets.profiles }}
+  binaries:
+    meta: "postgres"
+    bucket: {{ .Values.databases.s3.buckets.binaries }}
+  microscope: "postgres"
+tls:
+  enabled: {{ .Values.storage.tls.enabled }}
+  ca_file_path: {{ include "perforator.storage.tlsCACert" . }}
+  certificate_file_path: {{ include "perforator.storage.tlsCert" . }}
+  key_file_path: {{ include "perforator.storage.tlsCertKey" . }}
+  verify_client: {{ .Values.storage.tls.verifyClient }}
+microscope_puller:
+  pull_interval: "30s"
+  pull_batch_size: 1000
+  list_microscope_retries: 3
+  microscopes_limit: 1000

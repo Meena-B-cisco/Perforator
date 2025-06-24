@@ -1,0 +1,5 @@
+RECURSE(
+    buildid
+    jperfmap
+    vdsodump
+)

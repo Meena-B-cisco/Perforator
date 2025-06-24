@@ -1,0 +1,14 @@
+{
+    "include": [
+        "lib/**/*"
+    ],
+    "rootDir": "./lib",
+    "compilerOptions": {
+        "module": "ES2020",
+        "rootDir": "./lib",
+        "allowJs": true,
+        "outDir": "dist",
+        "declaration": true,
+        "declarationDir": "dist"
+    }
+}

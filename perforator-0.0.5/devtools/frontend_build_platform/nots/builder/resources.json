@@ -1,0 +1,24 @@
+{
+  "info": {
+    "created": "2025-02-26T05:28:39.657Z",
+    "pr": {
+      "id": 8026094,
+      "author": "zaverden",
+      "summary": "feat(TS_PACKAGE): add RUN_JAVASCRIPT support"
+    }
+  },
+  "by_platform": {
+    "darwin": {
+      "uri": "sbr:8131524490"
+    },
+    "darwin-arm64": {
+      "uri": "sbr:8131523977"
+    },
+    "linux": {
+      "uri": "sbr:8131525573"
+    },
+    "linux-aarch64": {
+      "uri": "sbr:8131525070"
+    }
+  }
+}

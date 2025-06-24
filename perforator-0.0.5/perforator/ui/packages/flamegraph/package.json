@@ -1,0 +1,26 @@
+{
+  "name": "@perforator/flamegraph",
+  "version": "0.1.0",
+  "description": "Yandex perforator flamegraph UI rendering library",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "devDependencies": {
+    "typescript": "5.3.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yandex/perforator.git"
+  },
+  "keywords": [
+    "flamegraph"
+  ],
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/yandex/perforator/issues"
+  },
+  "homepage": "https://github.com/yandex/perforator#readme"
+}

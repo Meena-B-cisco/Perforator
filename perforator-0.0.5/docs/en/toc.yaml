@@ -1,0 +1,91 @@
+title: Perforator
+href: index.md
+items:
+  - name: Intro
+    labeled: true
+    href: index.md
+  - name: Tutorials
+    labeled: true
+    items:
+    - name: Optimizing native applications
+      href: tutorials/native-profiling.md
+    - name: Optimizing Python applications
+      href: tutorials/python-profiling.md
+    - name: Setup Perforator test deployment in Kubernetes via Helm
+      href: tutorials/helm-chart.md
+    - name: Building your first profile with UI
+      href: tutorials/ui.md
+  - name: Explanation
+    labeled: true
+    items:
+    - name: Architecture
+      items:
+        - name: Overview
+          href: explanation/architecture/overview.md
+
+  - name: How-to guides
+    labeled: true
+    items:
+    - name: Building Perforator
+      href: guides/build.md
+    - name: CLI
+      items:
+        - name: Install and Configure Perforator CLI
+          href: guides/cli/install.md
+        - name: List Services
+          href: guides/cli/list_services.md
+        - name: List Profiles
+          href: guides/cli/list_profiles.md
+        - name: Fetch Profile
+          href: guides/cli/fetch.md
+        - name: Collect Profile Locally
+          href: guides/cli/record.md
+        - name: Set up Microscope
+          href: guides/cli/microscope.md
+    - name: UI
+      items:
+        - name: Diffs
+          href: guides/diff.md
+    - name: Profiling JVM applications
+      href: guides/jvm.md
+    - name: Using Perforator for continuous profile-guided optimization (PGO)
+      href: guides/autofdo.md
+    - name: Migrating database schema
+      href: guides/migrate-schema.md
+    - name: Deploy Perforator in Kubernetes via Helm
+      href: guides/helm-chart.md
+    - name: Setup databases for testing via docker compose
+      href: guides/docker-compose.md
+  - name: Reference
+    labeled: true
+    items:
+    - name: Query language
+      href: reference/querylang.md
+    - name: System requirements
+      href: reference/system-requirements.md
+    - name: Perfmap-based symbolization
+      href: reference/perfmap.md
+    - name: Databases
+      href: reference/database.md
+    - name: Language support
+      items:
+      - name: Overview
+        href: reference/language-support/overview.md
+      - name: Python
+        items:
+          - name: Overview
+            href: reference/language-support/python/profiling.md
+          - name: Parsing Python ELF
+            href: reference/language-support/python/parse_elf.md
+          - name: Current thread state
+            href: reference/language-support/python/threadstate.md
+          - name: Stack unwinding
+            href: reference/language-support/python/stack-unwinding.md
+          - name: Symbolization
+            href: reference/language-support/python/symbolization.md
+          - name: Merging Python and Native stacks
+            href: reference/language-support/python/merging.md
+      - name: JVM-based languages
+        href: reference/language-support/java.md
+    - name: Microscope
+      href: reference/microscope.md

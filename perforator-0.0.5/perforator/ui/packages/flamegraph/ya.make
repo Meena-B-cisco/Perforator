@@ -1,0 +1,3 @@
+TS_TSC()
+NO_LINT()
+END()

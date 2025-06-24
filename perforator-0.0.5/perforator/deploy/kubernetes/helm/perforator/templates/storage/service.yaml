@@ -1,0 +1,33 @@
+{{- if .Values.storage.enabled -}}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "perforator.storage.service.name" . }}
+  labels:
+    {{- include "perforator.selectorLabels" . | nindent 4 }}
+    {{- include "perforator.storage.selectorLabels" . | nindent 4 }}
+  namespace: {{ .Release.Namespace }}
+  {{- with .Values.storage.service.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+spec:
+  selector:
+    {{- include "perforator.selectorLabels" . | nindent 4 }}
+    {{- include "perforator.storage.selectorLabels" . | nindent 4 }}
+  type: {{ .Values.storage.service.type }}
+  {{- with .Values.storage.service.loadBalancerIP }}
+  loadBalancerIP: {{ . }}
+  {{- end }}
+  ports:
+  - name: grpc
+    port: {{ .Values.storage.service.ports.grpc.port }}
+    targetPort: grpc
+    {{- with .Values.storage.service.ports.grpc.nodePort }}
+    nodePort: {{ . }}
+    {{- end }}
+  {{- range .Values.storage.service.ipFamilies }}
+  ipFamilies:
+    - {{ . }}
+  {{- end }}
+{{- end }}

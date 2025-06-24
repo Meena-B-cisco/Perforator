@@ -1,0 +1,6 @@
+RECURSE(
+    app
+    union
+    packages
+)
+
